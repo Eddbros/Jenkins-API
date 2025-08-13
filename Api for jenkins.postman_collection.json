@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "5b8c0c3a-c596-4b9a-81ef-d4227dc00442",
+		"name": "Api for jenkins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45551765",
+		"_collection_link": "https://eduardo-6669094.postman.co/workspace/API-Test-for-Jenkins~e18f6895-edbe-461f-9982-4433a5118299/collection/45551765-5b8c0c3a-c596-4b9a-81ef-d4227dc00442?action=share&source=collection_link&creator=45551765"
+	},
+	"item": [
+		{
+			"name": "Get All Collections",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/collections?apikey={{API_Key}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"collections"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{API_Key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Collection Info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/collections/{{CollectionID}}?apikey={{API_Key}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"collections",
+						"{{CollectionID}}"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{API_Key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Environment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/environments?apikey={{API_Key}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"environments"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "{{API_Key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Chuck Norris Joke",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							" pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.chucknorris.io/jokes/random",
+					"protocol": "https",
+					"host": [
+						"api",
+						"chucknorris",
+						"io"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
